@@ -4,6 +4,9 @@
     <Filter Include="Chromaria">
       <UniqueIdentifier>{9BD7B3BB-0742-6832-5080-19D8BC294687}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Chromaria\Events">
+      <UniqueIdentifier>{1F876D55-0B80-8CA7-34B2-712C200A6CB3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chromaria.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Chromaria\EntryPoint.h">
       <Filter>Chromaria</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chromaria\Events\ApplicationEvent.h">
+      <Filter>Chromaria\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chromaria\Events\Event.h">
+      <Filter>Chromaria\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chromaria\Events\KeyEvent.h">
+      <Filter>Chromaria\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chromaria\Events\MouseEvent.h">
+      <Filter>Chromaria\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Chromaria\Log.h">
       <Filter>Chromaria</Filter>
