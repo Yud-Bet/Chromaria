@@ -1,0 +1,3 @@
+[submodule "Chromaria/vendor/spdlog"]
+	path = Chromaria/vendor/spdlog
+	url = git@github.com:gabime/spdlog.git
