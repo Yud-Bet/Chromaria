@@ -35,6 +35,8 @@
       <Filter>Chromaria</Filter>
     </ClInclude>
     <ClInclude Include="src\cmpch.h" />
+    <ClInclude Include="src\Chromaria\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Chromaria\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Chromaria</Filter>
     </ClCompile>
     <ClCompile Include="src\cmpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

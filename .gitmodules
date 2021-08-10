@@ -1,3 +1,6 @@
 [submodule "Chromaria/vendor/spdlog"]
 	path = Chromaria/vendor/spdlog
 	url = git@github.com:gabime/spdlog.git
+[submodule "Chromaria/vendor/GLFW"]
+	path = Chromaria/vendor/GLFW
+	url = git@github.com:Yud-Bet/glfw.git

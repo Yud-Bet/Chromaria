@@ -10,6 +10,13 @@ workspace "Chromaria"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Chromaria/vendor/GLFW/include"
+
+-- Include .lua file
+include "Chromaria/vendor/GLFW"
+
 project "Chromaria"
 	location "Chromaria"
 	kind "SharedLib"
@@ -30,7 +37,14 @@ project "Chromaria"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"
