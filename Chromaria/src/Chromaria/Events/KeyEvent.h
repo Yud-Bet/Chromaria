@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Chromaria {
 
 	class CHROMARIA_API KeyEvent : public Event

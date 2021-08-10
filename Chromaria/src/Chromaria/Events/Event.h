@@ -1,9 +1,7 @@
 #pragma once
 
+#include "cmpch.h"
 #include "Chromaria/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Chromaria {
 

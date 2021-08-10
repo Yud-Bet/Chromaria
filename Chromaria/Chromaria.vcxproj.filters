@@ -34,6 +34,7 @@
     <ClInclude Include="src\Chromaria\Log.h">
       <Filter>Chromaria</Filter>
     </ClInclude>
+    <ClInclude Include="src\cmpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Chromaria\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Chromaria\Log.cpp">
       <Filter>Chromaria</Filter>
     </ClCompile>
+    <ClCompile Include="src\cmpch.cpp" />
   </ItemGroup>
 </Project>

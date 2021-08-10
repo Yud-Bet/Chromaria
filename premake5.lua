@@ -18,6 +18,9 @@ project "Chromaria"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "cmpch.h"
+	pchsource "Chromaria/src/cmpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
