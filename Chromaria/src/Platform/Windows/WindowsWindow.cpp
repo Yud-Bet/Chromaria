@@ -5,6 +5,8 @@
 #include "Chromaria/Events/MouseEvent.h"
 #include "Chromaria/Events/ApplicationEvent.h"
 
+#include "glad/glad.h"
+
 namespace Chromaria {
 
 	static bool s_GLFWInitialized = false;
@@ -47,6 +49,8 @@ namespace Chromaria {
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, props.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		CM_CORE_ASSERTS(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

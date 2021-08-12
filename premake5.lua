@@ -13,9 +13,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Chromaria/vendor/GLFW/include"
+IncludeDir["Glad"] = "Chromaria/vendor/Glad/include"
 
 -- Include .lua file
 include "Chromaria/vendor/GLFW"
+include "Chromaria/vendor/Glad"
 
 project "Chromaria"
 	location "Chromaria"
@@ -38,12 +40,14 @@ project "Chromaria"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -55,7 +59,8 @@ project "Chromaria"
 		defines
 		{
 			"CM_PLATFORM_WINDOWS",
-			"CM_BUILD_DLL"
+			"CM_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
