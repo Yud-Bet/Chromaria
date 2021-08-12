@@ -7,6 +7,12 @@
     <Filter Include="Chromaria\Events">
       <UniqueIdentifier>{1F876D55-0B80-8CA7-34B2-712C200A6CB3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Chromaria.h" />
@@ -31,21 +37,39 @@
     <ClInclude Include="src\Chromaria\Events\MouseEvent.h">
       <Filter>Chromaria\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Chromaria\Layer.h">
+      <Filter>Chromaria</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Chromaria\LayerStack.h">
+      <Filter>Chromaria</Filter>
+    </ClInclude>
     <ClInclude Include="src\Chromaria\Log.h">
       <Filter>Chromaria</Filter>
     </ClInclude>
+    <ClInclude Include="src\Chromaria\Window.h">
+      <Filter>Chromaria</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\cmpch.h" />
-    <ClInclude Include="src\Chromaria\Window.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Chromaria\Application.cpp">
       <Filter>Chromaria</Filter>
     </ClCompile>
+    <ClCompile Include="src\Chromaria\Layer.cpp">
+      <Filter>Chromaria</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Chromaria\LayerStack.cpp">
+      <Filter>Chromaria</Filter>
+    </ClCompile>
     <ClCompile Include="src\Chromaria\Log.cpp">
       <Filter>Chromaria</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\cmpch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
