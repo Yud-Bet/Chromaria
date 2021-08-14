@@ -3,14 +3,22 @@
 
 #include "Log.h"
 
-#include "glad/glad.h"
+#include "imgui.h"
+#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
+
+#include <glad/glad.h>
 
 namespace Chromaria {
 
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+
 	Application::Application()
 	{
+		CM_ASSERTS(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
@@ -22,11 +30,13 @@ namespace Chromaria {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
 		m_LayerStack.PushOverlay(overlay);
+		overlay->OnDetach();
 	}
 
 	void Application::OnEvent(Event& e)
@@ -46,6 +56,8 @@ namespace Chromaria {
 	{
 		while (m_IsRunning)
 		{
+			glClear(GL_COLOR_BUFFER_BIT);
+
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
 

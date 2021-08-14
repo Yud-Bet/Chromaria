@@ -14,10 +14,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Chromaria/vendor/GLFW/include"
 IncludeDir["Glad"] = "Chromaria/vendor/Glad/include"
+IncludeDir["ImGui"] = "Chromaria/vendor/imgui"
 
 -- Include .lua file
 include "Chromaria/vendor/GLFW"
 include "Chromaria/vendor/Glad"
+include "Chromaria/vendor/imgui"
 
 project "Chromaria"
 	location "Chromaria"
@@ -41,14 +43,16 @@ project "Chromaria"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
-		"opengl32.lib"
+		"opengl32.lib",
+		"imgui"
 	}
 
 	filter "system:windows"

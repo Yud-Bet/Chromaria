@@ -6,6 +6,8 @@
 #include "Chromaria/Layer.h"
 #include "Chromaria/Log.h"
 
+#include "Chromaria/ImGui/ImGuiLayer.h"
+
 //----Entry point------------------------
 #include "Chromaria/EntryPoint.h"
 //---------------------------------------

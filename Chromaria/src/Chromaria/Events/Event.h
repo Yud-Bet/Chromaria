@@ -12,7 +12,7 @@ namespace Chromaria {
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 
@@ -33,7 +33,6 @@ namespace Chromaria {
 
 	class CHROMARIA_API Event
 	{
-		friend class EventDispatcher;
 	public:
 		bool Handled = false;
 
@@ -46,8 +45,6 @@ namespace Chromaria {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -62,7 +59,6 @@ namespace Chromaria {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
 				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}

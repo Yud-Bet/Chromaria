@@ -4,3 +4,6 @@
 [submodule "Chromaria/vendor/GLFW"]
 	path = Chromaria/vendor/GLFW
 	url = git@github.com:Yud-Bet/glfw.git
+[submodule "Chromaria/vendor/imgui"]
+	path = Chromaria/vendor/imgui
+	url = git@github.com:Yud-Bet/imgui.git
