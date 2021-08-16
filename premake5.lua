@@ -16,6 +16,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Chromaria/vendor/GLFW/include"
 IncludeDir["Glad"] = "Chromaria/vendor/Glad/include"
 IncludeDir["ImGui"] = "Chromaria/vendor/imgui"
+IncludeDir["glm"] = "Chromaria/vendor/glm"
 
 -- Include .lua file
 include "Chromaria/vendor/GLFW"
@@ -37,7 +38,9 @@ project "Chromaria"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
 
 	includedirs
@@ -46,7 +49,8 @@ project "Chromaria"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -105,7 +109,8 @@ project "Sandbox"
 	includedirs
 	{
 		"Chromaria/vendor/spdlog/include",
-		"Chromaria/src"
+		"Chromaria/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links

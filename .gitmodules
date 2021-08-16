@@ -7,3 +7,6 @@
 [submodule "Chromaria/vendor/imgui"]
 	path = Chromaria/vendor/imgui
 	url = git@github.com:Yud-Bet/imgui.git
+[submodule "Chromaria/vendor/glm"]
+	path = Chromaria/vendor/glm
+	url = git@github.com:g-truc/glm.git
