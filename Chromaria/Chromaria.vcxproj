@@ -159,9 +159,11 @@
     <ClInclude Include="src\Chromaria\Events\MouseEvent.h" />
     <ClInclude Include="src\Chromaria\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\Chromaria\Input.h" />
+    <ClInclude Include="src\Chromaria\KeyCodes.h" />
     <ClInclude Include="src\Chromaria\Layer.h" />
     <ClInclude Include="src\Chromaria\LayerStack.h" />
     <ClInclude Include="src\Chromaria\Log.h" />
+    <ClInclude Include="src\Chromaria\MouseButtonCodes.h" />
     <ClInclude Include="src\Chromaria\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />

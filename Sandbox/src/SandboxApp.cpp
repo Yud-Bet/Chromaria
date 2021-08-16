@@ -7,7 +7,8 @@ public:
 
 	void OnUpdate() override
 	{
-		CM_INFO("ExampleLayer::Update");
+		if (Chromaria::Input::IsKeyPressed(CM_KEY_TAB))
+			CM_TRACE("Tab key is pressed!");
 	}
 
 	void OnEvent(Chromaria::Event& e) override

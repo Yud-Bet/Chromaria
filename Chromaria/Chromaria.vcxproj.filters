@@ -64,6 +64,8 @@
     <ClInclude Include="src\cmpch.h" />
     <ClInclude Include="src\Chromaria\Input.h" />
     <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Chromaria\KeyCodes.h" />
+    <ClInclude Include="src\Chromaria\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Chromaria\Application.cpp">
