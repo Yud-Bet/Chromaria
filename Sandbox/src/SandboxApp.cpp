@@ -22,7 +22,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushLayer(new Chromaria::ImGuiLayer());
 	}
 	~Sandbox() {}
 };

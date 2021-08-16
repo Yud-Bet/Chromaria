@@ -6,6 +6,8 @@
 #include "Chromaria/LayerStack.h"
 #include "Events/ApplicationEvent.h"
 
+#include "ImGui/ImGuiLayer.h"
+
 namespace Chromaria {
 
 	class CHROMARIA_API Application
@@ -28,6 +30,7 @@ namespace Chromaria {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_IsRunning = true;
 		LayerStack m_LayerStack;
 	private:

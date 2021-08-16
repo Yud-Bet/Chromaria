@@ -58,9 +58,6 @@
     <ClInclude Include="src\Chromaria\Window.h">
       <Filter>Chromaria</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
-      <Filter>Platform\OpenGL</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -82,12 +79,10 @@
     <ClCompile Include="src\Chromaria\Log.cpp">
       <Filter>Chromaria</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
-      <Filter>Platform\OpenGL</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\cmpch.cpp" />
+    <ClCompile Include="src\Chromaria\ImGui\ImGuiBuild.cpp" />
   </ItemGroup>
 </Project>
