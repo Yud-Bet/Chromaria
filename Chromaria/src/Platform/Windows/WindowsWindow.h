@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Chromaria/Window.h"
+#include "Chromaria/Renderer/GraphicsContext.h"
 
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 namespace Chromaria {
 	class WindowsWindow : public Window
@@ -38,5 +39,6 @@ namespace Chromaria {
 		};
 
 		WindowData m_Data;
+		GraphicsContext* m_Context;
 	};
 }
