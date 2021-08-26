@@ -1347,6 +1347,9 @@
     <ClInclude Include="src\Chromaria\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Chromaria\Renderer\Shader.h" />
+    <ClInclude Include="src\Chromaria\Renderer\Buffer.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
+    <ClInclude Include="src\Chromaria\Renderer\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Chromaria\Application.cpp">
@@ -1378,5 +1381,8 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\Chromaria\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Chromaria\Renderer\Buffer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp" />
+    <ClCompile Include="src\Chromaria\Renderer\Renderer.cpp" />
   </ItemGroup>
 </Project>
