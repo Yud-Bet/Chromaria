@@ -22,7 +22,6 @@ public:
 
 	void OnEvent(Chromaria::Event& e) override
 	{
-		CM_TRACE(e);
 	}
 };
 

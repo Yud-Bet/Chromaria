@@ -20,6 +20,11 @@ namespace Chromaria
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		CM_CORE_ASSERTS(status, "Failed to initialize Glad!");
+
+		CM_CORE_INFO("OpenGl info:");
+		CM_CORE_INFO("Vendor: {0}", glGetString(GL_VENDOR));
+		CM_CORE_INFO("Renderer: {0}", glGetString(GL_RENDERER));
+		CM_CORE_INFO("Version: {0}", glGetString(GL_VERSION));
 	}
 
 	void OpenGLContext::SwapBuffers()
