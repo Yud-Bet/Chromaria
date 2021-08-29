@@ -24,7 +24,7 @@ namespace Chromaria{
 			case ShaderDataType::Bool:		return 1;
 		}
 
-		CM_CORE_ASSERTS(false, "Unknown ShaderDataType!");
+		CM_CORE_ASSERT(false, "Unknown ShaderDataType!");
 		return 0;
 	}
 
@@ -59,7 +59,7 @@ namespace Chromaria{
 				case Chromaria::ShaderDataType::Bool:	return 1;
 			}
 
-			CM_CORE_ASSERTS(false, "Unknown ShaderDataType!");
+			CM_CORE_ASSERT(false, "Unknown ShaderDataType!");
 			return 0;
 		}
 	};

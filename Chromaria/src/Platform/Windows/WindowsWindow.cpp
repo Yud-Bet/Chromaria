@@ -42,7 +42,7 @@ namespace Chromaria {
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
-			CM_CORE_ASSERTS(success, "Could not intialize GLFW!");
+			CM_CORE_ASSERT(success, "Could not intialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}

@@ -33,7 +33,7 @@ namespace Chromaria {
 			glDeleteShader(vertexShader);
 
 			CM_CORE_ERROR(infoLog.data());
-			CM_ASSERTS(false, "Vertex shader compilation failure!");
+			CM_ASSERT(false, "Vertex shader compilation failure!");
 			return;
 		}
 
@@ -64,7 +64,7 @@ namespace Chromaria {
 			glDeleteShader(vertexShader);
 
 			CM_CORE_ERROR(infoLog.data());
-			CM_ASSERTS(false, "Fragment shader compilation failure!");
+			CM_ASSERT(false, "Fragment shader compilation failure!");
 			return;
 		}
 
@@ -99,7 +99,7 @@ namespace Chromaria {
 			glDeleteShader(fragmentShader);
 
 			CM_CORE_ERROR(infoLog.data());
-			CM_ASSERTS(false, "Shader link failure!");
+			CM_ASSERT(false, "Shader link failure!");
 			return;
 		}
 
