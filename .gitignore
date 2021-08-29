@@ -5,6 +5,9 @@ bin-int/
 
 # Files
 *.user
+*.sln
+*.vcxproj
+*.filters
 
 # Exception
 !/vendor/bin/premake/*
