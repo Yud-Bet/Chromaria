@@ -12,6 +12,15 @@
 
 #include "Chromaria/ImGui/ImGuiLayer.h"
 
+#include "Chromaria/Renderer/Renderer.h"
+#include "Chromaria/Renderer/RenderCommand.h"
+
+#include "Chromaria/Renderer/Shader.h"
+#include "Chromaria/Renderer/Buffer.h"
+#include "Chromaria/Renderer/VertexArray.h"
+
+#include "Chromaria/Renderer/OrthographicCamera.h"
+
 //----Entry point------------------------
 #include "Chromaria/EntryPoint.h"
 //---------------------------------------
