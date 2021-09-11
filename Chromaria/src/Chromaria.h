@@ -6,6 +6,8 @@
 #include "Chromaria/Layer.h"
 #include "Chromaria/Log.h"
 
+#include "Chromaria/Core/Timestep.h"
+
 #include "Chromaria/Input.h"
 #include "Chromaria/KeyCodes.h"
 #include "Chromaria/MouseButtonCodes.h"

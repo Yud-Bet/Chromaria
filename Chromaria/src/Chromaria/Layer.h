@@ -2,6 +2,7 @@
 
 #include "Chromaria/Core.h"
 #include "Chromaria/Events/Event.h"
+#include "Chromaria/Core/Timestep.h"
 
 namespace Chromaria {
 
@@ -13,7 +14,7 @@ namespace Chromaria {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
