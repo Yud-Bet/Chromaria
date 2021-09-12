@@ -19,9 +19,11 @@ IncludeDir["ImGui"] = "Chromaria/vendor/imgui"
 IncludeDir["glm"] = "Chromaria/vendor/glm"
 
 -- Include .lua file
-include "Chromaria/vendor/GLFW"
-include "Chromaria/vendor/Glad"
-include "Chromaria/vendor/imgui"
+group "Dependencies"
+	include "Chromaria/vendor/GLFW"
+	include "Chromaria/vendor/Glad"
+	include "Chromaria/vendor/imgui"
+group ""
 
 project "Chromaria"
 	location "Chromaria"
