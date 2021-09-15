@@ -124,6 +124,12 @@ namespace Chromaria {
 		glUseProgram(0);
 	}
 
+	void Shader::UploadUniformFloat4(const std::string& name, const glm::vec4 value)
+	{
+		int location = glGetUniformLocation(m_RendererID, name.c_str());
+		glUniform4f(location, value.x, value.y, value.z, value.w);
+	}
+
 	void Shader::UploadUniformMat4(const std::string& name, const glm::mat4& matrix)
 	{
 		int location = glGetUniformLocation(m_RendererID, name.c_str());
