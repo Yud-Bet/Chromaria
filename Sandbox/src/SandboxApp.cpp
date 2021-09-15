@@ -20,7 +20,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.9f, 0.2f, 0.02f, 1.0f
 		};
 
-		std::shared_ptr<Chromaria::VertexBuffer> vertexBuffer;
+		Chromaria::Ref<Chromaria::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Chromaria::VertexBuffer::Create(vertices, sizeof(vertices)));
 
 		Chromaria::BufferLayout layout = {
@@ -32,7 +32,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		unsigned int indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Chromaria::IndexBuffer> indexBuffer;
+		Chromaria::Ref<Chromaria::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Chromaria::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -194,11 +194,11 @@ public:
 	{
 	}
 private:
-	std::shared_ptr<Chromaria::Shader> m_Shader;
-	std::shared_ptr<Chromaria::VertexArray> m_VertexArray;
+	Chromaria::Ref<Chromaria::Shader> m_Shader;
+	Chromaria::Ref<Chromaria::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Chromaria::Shader> m_FlatColorShader;
-	std::shared_ptr<Chromaria::VertexArray> m_SquareVA;
+	Chromaria::Ref<Chromaria::Shader> m_FlatColorShader;
+	Chromaria::Ref<Chromaria::VertexArray> m_SquareVA;
 
 	Chromaria::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
