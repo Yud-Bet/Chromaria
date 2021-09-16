@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Chromaria/vendor/GLFW/include"
 IncludeDir["Glad"] = "Chromaria/vendor/Glad/include"
 IncludeDir["ImGui"] = "Chromaria/vendor/imgui"
 IncludeDir["glm"] = "Chromaria/vendor/glm"
+IncludeDir["stb_image"] = "Chromaria/vendor/stb_image"
 
 -- Include .lua file
 group "Dependencies"
@@ -42,6 +43,8 @@ project "Chromaria"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -58,7 +61,8 @@ project "Chromaria"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links

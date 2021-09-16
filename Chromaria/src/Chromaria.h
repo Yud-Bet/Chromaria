@@ -18,6 +18,7 @@
 #include "Chromaria/Renderer/RenderCommand.h"
 
 #include "Chromaria/Renderer/Shader.h"
+#include "Chromaria/Renderer/Texture.h"
 #include "Chromaria/Renderer/Buffer.h"
 #include "Chromaria/Renderer/VertexArray.h"
 
