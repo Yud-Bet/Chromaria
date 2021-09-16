@@ -163,6 +163,7 @@ public:
 		m_TextureShader.reset(Chromaria::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Chromaria::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_EliteriaTexture = Chromaria::Texture2D::Create("assets/textures/Eliteria.png");
 
 		m_TextureShader->Bind();
 		std::dynamic_pointer_cast<Chromaria::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -223,6 +224,10 @@ public:
 
 		Chromaria::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
 
+		m_EliteriaTexture->Bind();
+
+		Chromaria::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
+
 		//Chromaria::Renderer::Submit(m_Shader, m_VertexArray);
 
 		Chromaria::Renderer::EndScene();
@@ -245,7 +250,7 @@ private:
 	Chromaria::Ref<Chromaria::Shader> m_FlatColorShader, m_TextureShader;
 	Chromaria::Ref<Chromaria::VertexArray> m_SquareVA;
 
-	Chromaria::Ref<Chromaria::Texture2D> m_Texture;
+	Chromaria::Ref<Chromaria::Texture2D> m_Texture, m_EliteriaTexture;
 
 	Chromaria::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
