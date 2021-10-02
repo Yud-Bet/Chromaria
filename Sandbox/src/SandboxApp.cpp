@@ -91,7 +91,7 @@ public:
 			}
 		)";
 
-		m_Shader.reset(Chromaria::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Chromaria::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -125,15 +125,15 @@ public:
 			}
 		)";
 
-		m_FlatColorShader.reset(Chromaria::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = Chromaria::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(Chromaria::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Chromaria::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_EliteriaTexture = Chromaria::Texture2D::Create("assets/textures/Eliteria.png");
 
-		m_TextureShader->Bind();
-		std::dynamic_pointer_cast<Chromaria::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		textureShader->Bind();
+		std::dynamic_pointer_cast<Chromaria::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Chromaria::Timestep timestep) override
@@ -187,13 +187,11 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
 		m_Texture->Bind();
-
-		Chromaria::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
-
+		Chromaria::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
 		m_EliteriaTexture->Bind();
-
-		Chromaria::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
+		Chromaria::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.0f)));
 
 		//Chromaria::Renderer::Submit(m_Shader, m_VertexArray);
 
@@ -211,10 +209,11 @@ public:
 	{
 	}
 private:
+	Chromaria::ShaderLibrary m_ShaderLibrary;
 	Chromaria::Ref<Chromaria::Shader> m_Shader;
 	Chromaria::Ref<Chromaria::VertexArray> m_VertexArray;
 
-	Chromaria::Ref<Chromaria::Shader> m_FlatColorShader, m_TextureShader;
+	Chromaria::Ref<Chromaria::Shader> m_FlatColorShader;
 	Chromaria::Ref<Chromaria::VertexArray> m_SquareVA;
 
 	Chromaria::Ref<Chromaria::Texture2D> m_Texture, m_EliteriaTexture;
