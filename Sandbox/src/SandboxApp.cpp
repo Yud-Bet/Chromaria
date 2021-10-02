@@ -10,7 +10,7 @@
 class ExampleLayer : public Chromaria::Layer
 {
 public:
-	ExampleLayer() : Layer("Example"), m_Camera(-1.6f, 1.6f, -0.9f, 0.9f), m_CameraPosition(0.0f)
+	ExampleLayer() : Layer("Example"), m_CameraController(16.0/9, true)
 	{
 		m_VertexArray.reset(Chromaria::VertexArray::Create());
 
@@ -138,40 +138,12 @@ public:
 
 	void OnUpdate(Chromaria::Timestep timestep) override
 	{
-		if (Chromaria::Input::IsKeyPressed(CM_KEY_LEFT))
-		{
-			m_CameraPosition.x -= m_CameraMoveSpeed * timestep;
-		}
-		else if (Chromaria::Input::IsKeyPressed(CM_KEY_RIGHT))
-		{
-			m_CameraPosition.x += m_CameraMoveSpeed * timestep;
-		}
-
-		if (Chromaria::Input::IsKeyPressed(CM_KEY_DOWN))
-		{
-			m_CameraPosition.y -= m_CameraMoveSpeed * timestep;
-		}
-		else if (Chromaria::Input::IsKeyPressed(CM_KEY_UP))
-		{
-			m_CameraPosition.y += m_CameraMoveSpeed * timestep;
-		}
-
-		if (Chromaria::Input::IsKeyPressed(CM_KEY_A))
-		{
-			m_CameraRotation -= m_CameraRotateSpeed * timestep;
-		}
-		else if (Chromaria::Input::IsKeyPressed(CM_KEY_D))
-		{
-			m_CameraRotation += m_CameraRotateSpeed * timestep;
-		}
+		m_CameraController.OnUpdate(timestep);
 
 		Chromaria::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Chromaria::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		Chromaria::Renderer::BeginScene(m_Camera);
+		Chromaria::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -207,6 +179,7 @@ public:
 
 	void OnEvent(Chromaria::Event& e) override
 	{
+		m_CameraController.OnEvent(e);
 	}
 private:
 	Chromaria::ShaderLibrary m_ShaderLibrary;
@@ -218,11 +191,7 @@ private:
 
 	Chromaria::Ref<Chromaria::Texture2D> m_Texture, m_EliteriaTexture;
 
-	Chromaria::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraRotation = 0.0f;
-	float m_CameraMoveSpeed = 1.0f;
-	float m_CameraRotateSpeed = 10.0f;
+	Chromaria::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

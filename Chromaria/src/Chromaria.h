@@ -11,6 +11,7 @@
 #include "Chromaria/Input.h"
 #include "Chromaria/KeyCodes.h"
 #include "Chromaria/MouseButtonCodes.h"
+#include "Chromaria/OrthographicCameraController.h"
 
 #include "Chromaria/ImGui/ImGuiLayer.h"
 
