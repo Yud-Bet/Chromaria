@@ -1,12 +1,16 @@
 [submodule "Chromaria/vendor/spdlog"]
 	path = Chromaria/vendor/spdlog
 	url = git@github.com:gabime/spdlog.git
+	branch = v1.x
 [submodule "Chromaria/vendor/GLFW"]
 	path = Chromaria/vendor/GLFW
 	url = git@github.com:Yud-Bet/glfw.git
+	branch = master
 [submodule "Chromaria/vendor/imgui"]
 	path = Chromaria/vendor/imgui
 	url = git@github.com:Yud-Bet/imgui.git
+	branch = docking
 [submodule "Chromaria/vendor/glm"]
 	path = Chromaria/vendor/glm
 	url = git@github.com:g-truc/glm.git
+	branch = master
