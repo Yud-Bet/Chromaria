@@ -2,16 +2,16 @@
 
 // Only use by Chromaria applications
 
-#include "Chromaria/Application.h"
-#include "Chromaria/Layer.h"
-#include "Chromaria/Log.h"
+#include "Chromaria/Core/Application.h"
+#include "Chromaria/Core/Layer.h"
+#include "Chromaria/Core/Log.h"
 
 #include "Chromaria/Core/Timestep.h"
 
-#include "Chromaria/Input.h"
-#include "Chromaria/KeyCodes.h"
-#include "Chromaria/MouseButtonCodes.h"
-#include "Chromaria/OrthographicCameraController.h"
+#include "Chromaria/Core/Input.h"
+#include "Chromaria/Core/KeyCodes.h"
+#include "Chromaria/Core/MouseButtonCodes.h"
+#include "Chromaria/Renderer/OrthographicCameraController.h"
 
 #include "Chromaria/ImGui/ImGuiLayer.h"
 
@@ -26,5 +26,5 @@
 #include "Chromaria/Renderer/OrthographicCamera.h"
 
 //----Entry point------------------------
-#include "Chromaria/EntryPoint.h"
+#include "Chromaria/Core/EntryPoint.h"
 //---------------------------------------

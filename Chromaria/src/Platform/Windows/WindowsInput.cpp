@@ -1,7 +1,7 @@
 #include "cmpch.h"
 #include "WindowsInput.h"
 
-#include "Chromaria/Application.h"
+#include "Chromaria/Core/Application.h"
 #include "GLFW/glfw3.h"
 
 namespace Chromaria

@@ -3,16 +3,16 @@
 #include "Core.h"
 
 #include "Window.h"
-#include "Chromaria/LayerStack.h"
-#include "Events/ApplicationEvent.h"
+#include "Chromaria/Core/LayerStack.h"
+#include "Chromaria/Events/ApplicationEvent.h"
 #include "Chromaria/Core/Timestep.h"
 
-#include "ImGui/ImGuiLayer.h"
+#include "Chromaria/ImGui/ImGuiLayer.h"
 
-#include "Renderer/Shader.h"
-#include "Renderer/Buffer.h"
-#include "Renderer/VertexArray.h"
-#include "Renderer/OrthographicCamera.h"
+#include "Chromaria/Renderer/Shader.h"
+#include "Chromaria/Renderer/Buffer.h"
+#include "Chromaria/Renderer/VertexArray.h"
+#include "Chromaria/Renderer/OrthographicCamera.h"
 
 namespace Chromaria {
 

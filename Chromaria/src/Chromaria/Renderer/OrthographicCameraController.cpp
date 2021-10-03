@@ -1,8 +1,8 @@
 #include "cmpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Chromaria/Input.h"
-#include "Chromaria/KeyCodes.h"
+#include "Chromaria/Core/Input.h"
+#include "Chromaria/Core/KeyCodes.h"
 
 namespace Chromaria {
 

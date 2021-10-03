@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Chromaria/Layer.h"
+#include "Chromaria/Core/Layer.h"
 
 #include "Chromaria/Events/ApplicationEvent.h"
 #include "Chromaria/Events/KeyEvent.h"

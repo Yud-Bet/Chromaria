@@ -3,7 +3,7 @@
 #include "cmpch.h"
 
 #include "Core.h"
-#include "Events/Event.h"
+#include "Chromaria/Events/Event.h"
 
 namespace Chromaria
 {

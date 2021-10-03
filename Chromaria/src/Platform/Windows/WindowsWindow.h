@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Chromaria/Window.h"
+#include "Chromaria/Core/Window.h"
 #include "Chromaria/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

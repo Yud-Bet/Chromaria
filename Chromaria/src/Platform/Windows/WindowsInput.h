@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Chromaria/Input.h"
+#include "Chromaria/Core/Input.h"
 
 namespace Chromaria
 {

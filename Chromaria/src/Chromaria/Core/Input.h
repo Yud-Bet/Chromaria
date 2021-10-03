@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Chromaria/Core.h"
+#include "Chromaria/Core/Core.h"
 
 namespace Chromaria
 {

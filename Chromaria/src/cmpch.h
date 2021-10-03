@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Chromaria/Log.h"
+#include "Chromaria/Core/Log.h"
 
 #ifdef CM_PLATFORM_WINDOWS
 	#include <Windows.h>
