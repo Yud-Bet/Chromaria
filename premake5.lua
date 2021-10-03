@@ -83,7 +83,6 @@ project "Chromaria"
 
 		defines
 		{
-			"CM_PLATFORM_WINDOWS",
 			"CM_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -134,11 +133,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		systemversion "latest"
-
-		defines
-		{
-			"CM_PLATFORM_WINDOWS"
-		}
 
 	filter "configurations:Debug"
 		defines "CM_DEBUG"
