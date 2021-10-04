@@ -24,7 +24,3 @@
 #include "Chromaria/Renderer/VertexArray.h"
 
 #include "Chromaria/Renderer/OrthographicCamera.h"
-
-//----Entry point------------------------
-#include "Chromaria/Core/EntryPoint.h"
-//---------------------------------------

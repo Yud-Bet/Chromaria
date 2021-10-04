@@ -1,4 +1,5 @@
 #include <Chromaria.h>
+#include <Chromaria/Core/EntryPoint.h>
 
 #include "imgui.h"
 
@@ -7,12 +8,14 @@
 
 #include "Platform/OpenGL/OpenGLShader.h"
 
+#include "Sandbox2D.h" 
+
 class ExampleLayer : public Chromaria::Layer
 {
 public:
 	ExampleLayer() : Layer("Example"), m_CameraController(16.0/9, true)
 	{
-		m_VertexArray.reset(Chromaria::VertexArray::Create());
+		m_VertexArray = Chromaria::VertexArray::Create();
 
 		float vertices[3 * 7] = {
 			-0.5f, -0.5f, 0.0f, 0.9f, 0.6f, 0.06f, 1.0f,
@@ -21,7 +24,7 @@ public:
 		};
 
 		Chromaria::Ref<Chromaria::VertexBuffer> vertexBuffer;
-		vertexBuffer.reset(Chromaria::VertexBuffer::Create(vertices, sizeof(vertices)));
+		vertexBuffer = Chromaria::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		Chromaria::BufferLayout layout = {
 			{ Chromaria::ShaderDataType::Float3, "a_Position" },
@@ -33,10 +36,10 @@ public:
 
 		unsigned int indices[3] = { 0, 1, 2 };
 		Chromaria::Ref<Chromaria::IndexBuffer> indexBuffer;
-		indexBuffer.reset(Chromaria::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
+		indexBuffer = Chromaria::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
-		m_SquareVA.reset(Chromaria::VertexArray::Create());
+		m_SquareVA = Chromaria::VertexArray::Create();
 
 		float squareVertices[4 * 5] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
@@ -45,7 +48,7 @@ public:
 			-0.5f,  0.5f, 0.0f, 0.0f, 1.0f
 		};
 
-		vertexBuffer.reset(Chromaria:: VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
+		vertexBuffer = Chromaria:: VertexBuffer::Create(squareVertices, sizeof(squareVertices));
 		vertexBuffer->SetLayout({
 			{ Chromaria::ShaderDataType::Float3, "a_Position" },
 			{ Chromaria::ShaderDataType::Float2, "a_TexCoord" }
@@ -53,7 +56,7 @@ public:
 		m_SquareVA->AddVertexBuffer(vertexBuffer);
 
 		unsigned int squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		indexBuffer.reset(Chromaria::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
+		indexBuffer = Chromaria::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t));
 		m_SquareVA->SetIndexBuffer(indexBuffer);
 
 		std::string vertexSrc = R"(
@@ -173,7 +176,7 @@ public:
 	virtual void OnImGuiRender() override
 	{
 		ImGui::Begin("Settings");
-		ImGui::ColorPicker3("Square color", glm::value_ptr(m_SquareColor));
+		ImGui::ColorEdit4("Square color", glm::value_ptr(m_SquareColor));
 		ImGui::End();
 	}
 
@@ -201,7 +204,8 @@ class Sandbox : public Chromaria::Application
 public:
 	Sandbox()
 	{
-		PushLayer(new ExampleLayer());
+		// PushLayer(new ExampleLayer());
+		PushLayer(new Sandbox2D());
 	}
 	~Sandbox() {}
 };
