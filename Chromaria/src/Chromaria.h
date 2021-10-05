@@ -16,6 +16,7 @@
 #include "Chromaria/ImGui/ImGuiLayer.h"
 
 #include "Chromaria/Renderer/Renderer.h"
+#include "Chromaria/Renderer/Renderer2D.h"
 #include "Chromaria/Renderer/RenderCommand.h"
 
 #include "Chromaria/Renderer/Shader.h"
