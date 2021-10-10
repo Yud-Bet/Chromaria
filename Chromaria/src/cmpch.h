@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "Chromaria/Core/Log.h"
+#include "Chromaria/Debug/Instrumentor.h"
 
 #ifdef CM_PLATFORM_WINDOWS
 	#include <Windows.h>
