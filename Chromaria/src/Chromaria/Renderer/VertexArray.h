@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Buffer.h"
+#include "Chromaria/Renderer/Buffer.h"
 
 namespace Chromaria {
 

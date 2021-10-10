@@ -1,9 +1,9 @@
 #pragma once
 
-#include "RenderCommand.h"
+#include "Chromaria/Renderer/RenderCommand.h"
 
-#include "OrthographicCamera.h"
-#include "Shader.h"
+#include "Chromaria/Renderer/OrthographicCamera.h"
+#include "Chromaria/Renderer/Shader.h"
 
 namespace Chromaria {
 
@@ -11,6 +11,7 @@ namespace Chromaria {
 	{
 	public:
 		static void Init();
+		static void Shutdown();
 
 		static void OnWindowResize(uint32_t width, uint32_t height);
 

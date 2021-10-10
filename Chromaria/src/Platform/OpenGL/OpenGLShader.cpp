@@ -1,5 +1,5 @@
 #include "cmpch.h"
-#include "OpenGlShader.h"
+#include "Platform/OpenGL/OpenGlShader.h"
 
 #include <fstream>
 #include <glad/glad.h>

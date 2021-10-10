@@ -1,7 +1,7 @@
 #include "cmpch.h"
-#include "Shader.h"
+#include "Chromaria/Renderer/Shader.h"
 
-#include "Renderer.h"
+#include "Chromaria/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"
 
 namespace Chromaria {

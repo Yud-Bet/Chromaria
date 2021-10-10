@@ -1,7 +1,7 @@
 #pragma once
 
-#include "OrthographicCamera.h"
-#include "Texture.h"
+#include "Chromaria/Renderer/OrthographicCamera.h"
+#include "Chromaria/Renderer/Texture.h"
 
 namespace Chromaria {
 	

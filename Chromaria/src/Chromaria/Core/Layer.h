@@ -6,7 +6,7 @@
 
 namespace Chromaria {
 
-	class CHROMARIA_API Layer
+	class Layer
 	{
 	public:
 		Layer(const std::string& name = "Layer");

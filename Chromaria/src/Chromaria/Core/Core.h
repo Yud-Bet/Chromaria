@@ -43,22 +43,6 @@
 	#error "Unknown platform!"
 #endif // End of platform detection
 
-
-// DLL support
-#ifdef CM_PLATFORM_WINDOWS
-	#if CM_DYNAMIC_LINK
-		#ifdef CM_BUILD_DLL
-			#define CHROMARIA_API __declspec(dllexport)
-		#else
-			#define CHROMARIA_API __declspec(dllimport)
-		#endif
-	#else
-	#define CHROMARIA_API
-	#endif
-#else
-	#error Chormaria only support windows
-#endif // End of DLL support
-
 #ifdef CM_DEBUG
 	#define CM_ENABLE_ASSERTS
 #endif

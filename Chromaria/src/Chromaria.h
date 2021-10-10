@@ -1,6 +1,7 @@
 #pragma once
 
 // Only use by Chromaria applications
+#include "Chromaria/Core/Core.h"
 
 #include "Chromaria/Core/Application.h"
 #include "Chromaria/Core/Layer.h"

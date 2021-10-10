@@ -1,5 +1,4 @@
 #pragma once
-
 #include "cmpch.h"
 #include "Chromaria/Core/Core.h"
 
@@ -31,7 +30,7 @@ namespace Chromaria {
 								virtual const char* GetName() const override { return #type; }
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class CHROMARIA_API Event
+	class Event
 	{
 	public:
 		bool Handled = false;

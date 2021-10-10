@@ -1,14 +1,14 @@
 #pragma once
 
-#include "Core.h"
-#include "Layer.h"
+#include "Chromaria/Core/Core.h"
+#include "Chromaria/Core/Layer.h"
 
 namespace Chromaria {
 
-	class CHROMARIA_API LayerStack
+	class LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

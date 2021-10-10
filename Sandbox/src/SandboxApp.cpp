@@ -1,19 +1,17 @@
 #include <Chromaria.h>
 #include <Chromaria/Core/EntryPoint.h>
 
-#include "imgui.h"
+#include <imgui.h>
 
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
-
-#include "Platform/OpenGL/OpenGLShader.h"
 
 #include "Sandbox2D.h" 
 
 class ExampleLayer : public Chromaria::Layer
 {
 public:
-	ExampleLayer() : Layer("Example"), m_CameraController(16.0/9, true)
+	ExampleLayer() : Layer("Example"), m_CameraController(16.0f/9.0f, true)
 	{
 		m_VertexArray = Chromaria::VertexArray::Create();
 
@@ -23,8 +21,7 @@ public:
 			 0.0f,  0.5f, 0.0f, 0.9f, 0.2f, 0.02f, 1.0f
 		};
 
-		Chromaria::Ref<Chromaria::VertexBuffer> vertexBuffer;
-		vertexBuffer = Chromaria::VertexBuffer::Create(vertices, sizeof(vertices));
+		Chromaria::Ref<Chromaria::VertexBuffer> vertexBuffer = Chromaria::VertexBuffer::Create(vertices, sizeof(vertices));
 
 		Chromaria::BufferLayout layout = {
 			{ Chromaria::ShaderDataType::Float3, "a_Position" },
@@ -35,8 +32,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		unsigned int indices[3] = { 0, 1, 2 };
-		Chromaria::Ref<Chromaria::IndexBuffer> indexBuffer;
-		indexBuffer = Chromaria::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
+		Chromaria::Ref<Chromaria::IndexBuffer> indexBuffer = Chromaria::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
 		m_SquareVA = Chromaria::VertexArray::Create();
@@ -136,7 +132,7 @@ public:
 		m_EliteriaTexture = Chromaria::Texture2D::Create("assets/textures/Eliteria.png");
 
 		textureShader->Bind();
-		std::dynamic_pointer_cast<Chromaria::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
+		textureShader->SetInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Chromaria::Timestep timestep) override
@@ -151,7 +147,7 @@ public:
 		static glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
 		m_FlatColorShader->Bind();
-		std::dynamic_pointer_cast<Chromaria::OpenGLShader>(m_FlatColorShader)->UploadUniformFloat3("u_Color", m_SquareColor);
+		m_FlatColorShader->SetFloat3("u_Color", m_SquareColor);
 		for (int y = 0; y < 20; y++)
 		{
 			for (int x = 0; x < 20; x++)

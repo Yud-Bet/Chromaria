@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Chromaria/Core/Core.h"
+
 #ifdef CM_PLATFORM_WINDOWS
 
 extern Chromaria::Application* Chromaria::CreateApplication();

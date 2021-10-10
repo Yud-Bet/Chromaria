@@ -1,7 +1,7 @@
 #include "cmpch.h"
-#include "Texture.h"
+#include "Chromaria/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "Chromaria/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace Chromaria {

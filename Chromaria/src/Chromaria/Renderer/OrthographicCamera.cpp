@@ -1,5 +1,6 @@
 #include "cmpch.h"
-#include "OrthographicCamera.h"
+#include "Chromaria/Renderer/OrthographicCamera.h"
+
 #include <glm/gtc/matrix_transform.hpp>
 
 namespace Chromaria {

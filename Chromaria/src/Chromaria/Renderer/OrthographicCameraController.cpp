@@ -1,5 +1,5 @@
 #include "cmpch.h"
-#include "OrthographicCameraController.h"
+#include "Chromaria/Renderer/OrthographicCameraController.h"
 
 #include "Chromaria/Core/Input.h"
 #include "Chromaria/Core/KeyCodes.h"

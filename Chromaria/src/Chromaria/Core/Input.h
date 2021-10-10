@@ -5,7 +5,7 @@
 namespace Chromaria
 {
 
-	class CHROMARIA_API Input
+	class Input
 	{
 	protected:
 		Input() = default;

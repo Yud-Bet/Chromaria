@@ -1,11 +1,7 @@
 #include "cmpch.h"
-#include "LayerStack.h"
+#include "Chromaria/Core/LayerStack.h"
 
 namespace Chromaria {
-
-	LayerStack::LayerStack()
-	{
-	}
 
 	LayerStack::~LayerStack()
 	{

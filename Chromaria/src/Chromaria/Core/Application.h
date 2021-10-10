@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
+#include "Chromaria/Core/Core.h"
 
-#include "Window.h"
+#include "Chromaria/Core/Window.h"
 #include "Chromaria/Core/LayerStack.h"
 #include "Chromaria/Events/ApplicationEvent.h"
 #include "Chromaria/Core/Timestep.h"
@@ -16,7 +16,7 @@
 
 namespace Chromaria {
 
-	class CHROMARIA_API Application
+	class Application
 	{
 	public:
 		Application();
