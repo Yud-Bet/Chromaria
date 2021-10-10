@@ -18,6 +18,8 @@ private:
 	Chromaria::Ref<Chromaria::Shader> m_FlatColorShader;
 	Chromaria::Ref<Chromaria::VertexArray> m_SquareVA;
 
+	Chromaria::Ref<Chromaria::Texture2D> m_CheckerboardTexture;
+
 	Chromaria::OrthographicCameraController m_CameraController;
 
 	glm::vec4 m_SquareColor = { 0.2f, 0.3f, 0.8f, 1.0f };

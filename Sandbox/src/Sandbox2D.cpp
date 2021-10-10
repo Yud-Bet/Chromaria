@@ -4,8 +4,6 @@
 
 #include <glm/gtc/type_ptr.hpp>
 
-#include "Platform/OpenGL/OpenGLShader.h"
-
 Sandbox2D::Sandbox2D()
 	:Layer("Sandbox2D"), m_CameraController(16.0 / 9, true)
 {
@@ -13,7 +11,7 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
-	
+	m_CheckerboardTexture = Chromaria::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
@@ -28,7 +26,9 @@ void Sandbox2D::OnUpdate(Chromaria::Timestep ts)
 	Chromaria::RenderCommand::Clear();
 
 	Chromaria::Renderer2D::BeginScene(m_CameraController.GetCamera());
-	Chromaria::Renderer2D::DrawQuad({ 0.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+	Chromaria::Renderer2D::DrawQuad({ 1.0f, 0.0f }, { 1.0f, 1.0f }, { 0.8f, 0.2f, 0.3f, 1.0f });
+	Chromaria::Renderer2D::DrawQuad({ -1.0f, 0.0f }, { 0.5f, 1.0f }, { 0.2f, 0.3f, 1.0f, 1.0f });
+	Chromaria::Renderer2D::DrawQuad({ 0.0f, 0.0f, -0.1f }, { 10.0f, 10.0f }, m_CheckerboardTexture);
 	Chromaria::Renderer2D::EndScene();
 
 	/*m_FlatColorShader->Bind();
