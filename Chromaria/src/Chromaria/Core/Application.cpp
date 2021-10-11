@@ -15,6 +15,8 @@ namespace Chromaria {
 
 	Application::Application()
 	{
+		CM_PROFILE_FUNCTION();
+
 		CM_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -29,21 +31,31 @@ namespace Chromaria {
 
 	Application::~Application()
 	{
+		CM_PROFILE_FUNCTION();
+
 		Renderer::Shutdown();
 	}
 
 	void Application::PushLayer(Layer* layer)
 	{
+		CM_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		CM_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
+		overlay->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		CM_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(CM_BIND_EVENT_FN(Application::OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(CM_BIND_EVENT_FN(Application::OnWindowResize));
@@ -58,22 +70,34 @@ namespace Chromaria {
 
 	void Application::Run()
 	{
+		CM_PROFILE_FUNCTION();
+
 		while (m_IsRunning)
 		{
+			CM_PROFILE_SCOPE("Run Loop");
+
 			float time = (float)glfwGetTime();
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
-					layer->OnUpdate(timestep);
-			}
+				{
+					CM_PROFILE_SCOPE("LayerStack OnUpdate");
 
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-				layer->OnImGuiRender();
-			m_ImGuiLayer->End();
+					for (Layer* layer : m_LayerStack)
+						layer->OnUpdate(timestep);
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					CM_PROFILE_SCOPE("LayerStack OnImGuiRender");
+
+					for (Layer* layer : m_LayerStack)
+						layer->OnImGuiRender();
+				}
+				m_ImGuiLayer->End();
+			}
 
 			m_Window->OnUpdate();
 		}
@@ -87,6 +111,8 @@ namespace Chromaria {
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		CM_PROFILE_FUNCTION();
+
 		if (e.GetHeight() == 0 || e.GetWidth() == 0)
 		{
 			m_Minimized = true;

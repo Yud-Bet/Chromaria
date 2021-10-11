@@ -14,6 +14,8 @@ namespace Chromaria
 
 	void OpenGLContext::Init()
 	{
+		CM_PROFILE_FUNCTION();
+
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		CM_CORE_ASSERT(status, "Failed to initialize Glad!");
@@ -32,6 +34,8 @@ namespace Chromaria
 
 	void OpenGLContext::SwapBuffers()
 	{
+		CM_PROFILE_FUNCTION();
+
 		glfwSwapBuffers(m_WindowHandle);
 	}
 

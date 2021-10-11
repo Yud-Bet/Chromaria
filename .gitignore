@@ -9,6 +9,9 @@ bin-int/
 *.vcxproj
 *.filters
 imgui.ini
+ChromariaProfile-Startup.json
+ChromariaProfile-Shutdown.json
+ChromariaProfile-Runtime.json
 
 # Exception
 !/vendor/bin/premake/*

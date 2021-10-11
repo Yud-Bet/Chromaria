@@ -18,6 +18,8 @@ namespace Chromaria {
 
 	void ImGuiLayer::OnAttach()
 	{
+		CM_PROFILE_FUNCTION();
+
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
@@ -51,6 +53,8 @@ namespace Chromaria {
 
 	void ImGuiLayer::OnDetach()
 	{
+		CM_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_Shutdown();
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
@@ -58,12 +62,16 @@ namespace Chromaria {
 
 	void ImGuiLayer::Begin()
 	{
+		CM_PROFILE_FUNCTION();
+
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 	}
 	void ImGuiLayer::End()
 	{
+		CM_PROFILE_FUNCTION();
+
 		ImGuiIO& io = ImGui::GetIO();
 		Application& app = Application::Get();
 		io.DisplaySize = ImVec2((float)app.GetWindow().GetWidth(), (float)app.GetWindow().GetHeight());

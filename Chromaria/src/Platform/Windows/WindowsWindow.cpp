@@ -23,16 +23,22 @@ namespace Chromaria {
 
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
+		CM_PROFILE_FUNCTION();
+
 		Init(props);
 	}
 
 	WindowsWindow::~WindowsWindow()
 	{
+		CM_PROFILE_FUNCTION();
+
 		ShutDown();
 	}
 
 	void WindowsWindow::Init(const WindowProps& props)
 	{
+		CM_PROFILE_FUNCTION();
+
 		m_Data.Title = props.Title;
 		m_Data.Height = props.Height;
 		m_Data.Width = props.Width;
@@ -41,14 +47,18 @@ namespace Chromaria {
 
 		if (s_GLFWWindowCount == 0)
 		{
+			CM_PROFILE_SCOPE("glfwInit");
 			CM_CORE_INFO("Initializing GLFW...");
 			int success = glfwInit();
 			CM_CORE_ASSERT(success, "Could not intialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}
 
-		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, props.Title.c_str(), nullptr, nullptr);
-		++s_GLFWWindowCount;
+		{
+			CM_PROFILE_SCOPE("glfwCreateWindow");
+			m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, props.Title.c_str(), nullptr, nullptr);
+			++s_GLFWWindowCount;
+		}
 
 		m_Context = GraphicsContext::Create(m_Window);
 		m_Context->Init();
@@ -150,6 +160,8 @@ namespace Chromaria {
 
 	void WindowsWindow::ShutDown()
 	{
+		CM_PROFILE_FUNCTION();
+
 		glfwDestroyWindow(m_Window);
 		s_GLFWWindowCount--;
 		if (s_GLFWWindowCount == 0)
@@ -161,12 +173,16 @@ namespace Chromaria {
 
 	void WindowsWindow::OnUpdate()
 	{
+		CM_PROFILE_FUNCTION();
+
 		glfwPollEvents();
 		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)
 	{
+		CM_PROFILE_FUNCTION();
+
 		if (enabled)
 			glfwSwapInterval(1);
 		else

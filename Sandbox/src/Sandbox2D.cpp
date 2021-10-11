@@ -11,21 +11,20 @@ Sandbox2D::Sandbox2D()
 
 void Sandbox2D::OnAttach()
 {
+	CM_PROFILE_FUNCTION();
 	m_CheckerboardTexture = Chromaria::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void Sandbox2D::OnDetach()
 {
+	CM_PROFILE_FUNCTION();
 }
 
 void Sandbox2D::OnUpdate(Chromaria::Timestep ts)
 {
 	CM_PROFILE_FUNCTION();
 
-	{
-		CM_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
 	{
 		CM_PROFILE_SCOPE("Render preparation");
